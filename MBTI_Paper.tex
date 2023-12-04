@@ -1,0 +1,106 @@
+\documentclass[twoside,11pt]{article}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+\usepackage{jmlr2e}
+
+% Definitions of handy macros can go here
+
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+
+% Heading arguments are {volume}{year}{pages}{submitted}{published}{author-full-names}
+
+% Short headings should be running head and authors last names
+
+\ShortHeadings{Predicting Personality from Tweets using Machine Learning}{}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Predicting Personality from Tweets using Machine Learning}
+
+\author{\name Nathan Holmes \email nholmes@email.unc.edu \\
+       \addr University of North Carolina at Chapel Hill\\
+       \AND
+       \name Namita Krishna \email EMAIL HERE \\
+       \addr University of North Carolina at Chapel Hill\\
+       \AND
+       \name Andrew Mu \email EMAIL HERE \\
+       \addr University of North Carolina at Chapel Hill\\
+       \AND
+       \name Nabeel Rahman \email EMAIL HERE \\
+       \addr University of North Carolina at Chapel Hill\\
+       }
+
+\maketitle
+
+\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
+This paper explores the use of machine learning in analyzing social media data, specifically Tweets, to accurately identify Myers-Briggs Type Indicator (MBTI) personality types. Leveraging diverse data encompassing both qualitative and quantitative dimensions, our study employs K-Nearest Neighbors, Logistic Regression, Multinomial Naive Bayes, and Random Forest models to discern nuanced patterns. Through rigorous evaluation, we contribute insights into the effectiveness of these models for personality type identification. This research advances the understanding of the interplay between language use on social media and personality traits, with practical implications for social sciences and human behavior analysis.
+\end{abstract}
+
+\begin{keywords}
+  KNN, Logistic Regression, Multinomial Naive Bayes, Random Forest
+\end{keywords}
+
+\section{Introduction}
+Classification is a fundamental domain in realm of machine learning research, permeating our daily lives through advanced models that process data with refined sophistication. From discerning spam emails to categorizing patient diagnoses, we are constantly immersed in the practical applications of these advanced technologies. This project delves into the realm of social media, leveraging a diverse dataset of Tweets that encapsulate both qualitative and quantitative dimensions. Within this paper, we undertake the construction and evaluation of accuracy in identifying MBTI types based on users' tweet content. Our approach involves employing a K-Next Neighbor classifier model, a Logistic Regression model, a Multinomial Naive Bayes model, and a Random Forest classifier model to discern nuanced patterns and trends.\\
+
+\section{Data Collection and Model Development}
+Our dataset, obtained from Kaggle, consists of a collection of Tweets paired with their corresponding user's MBTI types. This provided us with diverse and invaluable data for identifing patterns between tweet content and a user's personality. After downloading the dataset, we employed preprocessing techniques, including tokenization and vectorization using tools like CountVectorizer. Subsequently, we split the dataset into training and testing sets, facilitating the development of various classification models. The K-Nearest Neighbors classifier, Logistic Regression, Multinomial Naive Bayes, and Random Forest classifier were trained and evaluated to capture nuanced patterns in the data, and each underwent fine-tuning of hyperparameters. Accuracy metrics and confusion matrices were then generated, providing a comprehensive assessment of each model's performance in predicting personality types from social media content.
+
+
+\section{Evaluating Model Results}
+To assess the performance of our classification models, we employ key metrics including accuracy, precision, recall, and F1-score.
+
+The accuracy of a model is determined by the ratio of correctly predicted instances to the total number of instances:
+
+\[
+\text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}}
+\]
+
+Precision represents the proportion of true positive predictions among all instances predicted as positive:
+
+\[
+\text{Precision} = \frac{\text{TP}}{\text{TP + FP}}
+\]
+
+Recall, or sensitivity, measures the proportion of actual positives correctly predicted by the model:
+
+\[
+\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}
+\]
+
+The F1-score is the harmonic mean of precision and recall, providing a balanced measure of a model's performance:
+
+\[
+\text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision + Recall}}
+\]
+
+Support represents the number of actual occurrences of each class in the specified dataset.
+
+Additionally, we generate confusion matrices, visual representations of a model's performance, to provide insights into the number of true positive, true negative, false positive, and false negative predictions for each class. This allows us to see which MBTI types we are identifying correctly, and which ones we are confusing.
+
+\section{Multinomial Naive Bayes}
+The Multinomial Naive Bayes (MNB) model is particularly well-suited for text classification tasks, making it a suitable choice for our Twitter dataset. The model is based on Bayes' theorem, where the probability of a document given a class is proportional to the product of individual term probabilities:
+
+\[
+P(\textbf{x}|y,\theta)\propto\prod_{i=1}^{n}P(x_{i}|y,\theta_{i})
+\]
+
+Here, \(\textbf{x}\) represents the feature vector, \(y\) is the class label, and \(\theta_{i}\) corresponds to the model parameters associated with term \(i\).
+
+We implemented the MNB model using CountVectorizer to convert text data into feature vectors, focusing on term frequencies in each document. To enhance the model's performance, we introduced fine-tuning of hyperparameters, specifically exploring different values for the Laplace smoothing parameter \(\alpha\). The fine-tuning process aimed to address potential issues with unseen features and improve the model's generalization on our dataset.
+
+In our evaluation, the Multinomial Naive Bayes model achieved an accuracy of 0.48 in predicting Myers-Briggs personality types based on tweet content. Alongside accuracy, we employed a confusion matrix to visualize the model's performance across different personality types. The classification report provides additional insights into the model's precision, recall, and F1-score for each personality type, offering a nuanced understanding of its strengths and areas for improvement.
+
+\vskip 0.2in
+\bibliography{sample}
+
+\end{document}
