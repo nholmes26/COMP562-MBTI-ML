@@ -46,7 +46,7 @@ This paper explores the use of machine learning in analyzing social media data, 
 \end{abstract}
 
 \begin{keywords}
-  KNN, Logistic Regression, Multinomial Naive Bayes, Random Forest
+  MBTI, KNN, Logistic Regression, Multinomial Naive Bayes, Random Forest
 \end{keywords}
 
 \section{Introduction}
@@ -59,38 +59,23 @@ Our dataset, obtained from Kaggle, consists of a collection of Tweets paired wit
 \section{Evaluating Model Results}
 To assess the performance of our classification models, we employ key metrics including accuracy, precision, recall, and F1-score.
 
-The accuracy of a model is determined by the ratio of correctly predicted instances to the total number of instances.
+The accuracy of a model is determined by the ratio of correctly predicted instances to the total number of instances:
 
-Precision represents the proportion of true positive predictions among all instances predicted as positive:
+\[ \text{Accuracy} = \frac{\text{TP + TN}}{\text{TP + TN + FP + FN}} \
 
-\[
-\text{Precision} = \frac{\text{TP}}{\text{TP + FP}}
-\]
 
-Recall, or sensitivity, measures the proportion of actual positives correctly predicted by the model:
+Additionally, we generate confusion matrices, visual representations of a model's performance, to provide insights into the number of true positive, true negative, false positive, and false negative predictions for each class. This allows us to see which MBTI types we are identifying correctly, and which ones we are confusing. We also take this a step further, and with each model calculate the number of incorrectly predicted MBTI types were only 1 trait, or letter, away from being correct.
 
-\[
-\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}
-\]
-
-The F1-score is the harmonic mean of precision and recall, providing a balanced measure of a model's performance:
-
-\[
-\text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision + Recall}}
-\]
-
-Support represents the number of actual occurrences of each class in the specified dataset.
-
-Additionally, we generate confusion matrices, visual representations of a model's performance, to provide insights into the number of true positive, true negative, false positive, and false negative predictions for each class. This allows us to see which MBTI types we are identifying correctly, and which ones we are confusing.
-
-\section{Multinomial Naive Bayes}
-The Multinomial Naive Bayes (MNB) model, well-suited for text classification tasks, emerged as a fitting choice for our Twitter dataset. Rooted in Bayes' theorem, this model calculates the probability of a document given a class by considering the product of individual term probabilities. The probability estimation equation for MNB forms the core of our implementation:
+\subsection{Multinomial Naive Bayes}
+The Multinomial Naive Bayes (MNB) model, well-suited for text classification tasks, emerged as a fitting choice for our Twitter dataset. Rooted in Bayes' theorem, the probability estimation equation for MNB forms the core of our implementation:
 
 \[ P(\textbf{x}|y, \boldsymbol{\theta}) = \prod_{i=1}^{n} \frac{N_{yi} + \alpha}{N_{y} + \alpha \cdot N_{\text{total}}} \]
 
+Here, the probability of a given tweet belonging to a personality class given model parameters, \(P(\textbf{x}|y, \boldsymbol{\theta})\), is equal to the product (\(\prod_{i=1}^{n}\)) of all possible probability estimates of a word being in tweets by a specific MBTI type (\(N_{yi} + \alpha\)) out of the total count of all words in tweets of that personality type (\(N_{y} + \alpha \cdot N_{\text{total}}\)).
+
 We utilized CountVectorizer to convert text data into feature vectors, focusing on term frequencies in each document. To optimize the model's performance, hyperparameter fine-tuning was implemented, specifically exploring different values for the Laplace smoothing parameter \(\alpha\). Laplace smoothing, crucial for handling the zero probability problem that occurs when the model encounters words it was not trained on, was determined to be most effective with \(\alpha\) set at 0.1.
 
-In our evaluation, the Multinomial Naive Bayes model demonstrated an accuracy of 0.48 in predicting Myers-Briggs personality types based on tweet content. Complementing accuracy, a confusion matrix visually represented the model's performance across various personality types, while the classification report provided detailed insights into precision, recall, and F1-score for each personality type, offering a nuanced understanding of the model's strengths and potential areas for improvement.
+In our evaluation, the MNB model demonstrated an accuracy of 0.48 in predicting Myers-Briggs personality types based on tweet content. Complementing accuracy, a confusion matrix visually represented the model's performance across various personality types, offering a nuanced understanding of the model's strengths and potential areas for improvement. For example, this matrix revealed that 50\% of all mistakes were confusions of MBTI types that were only a single trait apart. 
 
 \vskip 0.2in
 
