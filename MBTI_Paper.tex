@@ -87,20 +87,15 @@ Support represents the number of actual occurrences of each class in the specifi
 
 Additionally, we generate confusion matrices, visual representations of a model's performance, to provide insights into the number of true positive, true negative, false positive, and false negative predictions for each class. This allows us to see which MBTI types we are identifying correctly, and which ones we are confusing.
 
-\section{Multinomial Naive Bayes}
-The Multinomial Naive Bayes (MNB) model is particularly well-suited for text classification tasks, making it a suitable choice for our Twitter dataset. The model is based on Bayes' theorem, where the probability of a document given a class is proportional to the product of individual term probabilities:
+\subsection{Multinomial Naive Bayes}
+The Multinomial Naive Bayes (MNB) model, well-suited for text classification tasks, emerged as a fitting choice for our Twitter dataset. Rooted in Bayes' theorem, this model calculates the probability of a document given a class by considering the product of individual term probabilities. The probability estimation equation for MNB forms the core of our implementation:
 
-\[
-P(\textbf{x}|y,\theta)\propto\prod_{i=1}^{n}P(x_{i}|y,\theta_{i})
-\]
+\[ P(\textbf{x}|y, \boldsymbol{\theta}) = \prod_{i=1}^{n} \frac{N_{yi} + \alpha}{N_{y} + \alpha \cdot N_{\text{total}}} \]
 
-Here, \(\textbf{x}\) represents the feature vector, \(y\) is the class label, and \(\theta_{i}\) corresponds to the model parameters associated with term \(i\).
+We utilized CountVectorizer to convert text data into feature vectors, focusing on term frequencies in each document. To optimize the model's performance, hyperparameter fine-tuning was implemented, specifically exploring different values for the Laplace smoothing parameter \(\alpha\). Laplace smoothing, crucial for handling the zero probability problem that occurs when the model encounters words it was not trained on, was determined to be most effective with \(\alpha\) set at 0.1.
 
-We implemented the MNB model using CountVectorizer to convert text data into feature vectors, focusing on term frequencies in each document. To enhance the model's performance, we introduced fine-tuning of hyperparameters, specifically exploring different values for the Laplace smoothing parameter \(\alpha\). The fine-tuning process aimed to address potential issues with unseen features and improve the model's generalization on our dataset.
-
-In our evaluation, the Multinomial Naive Bayes model achieved an accuracy of 0.48 in predicting Myers-Briggs personality types based on tweet content. Alongside accuracy, we employed a confusion matrix to visualize the model's performance across different personality types. The classification report provides additional insights into the model's precision, recall, and F1-score for each personality type, offering a nuanced understanding of its strengths and areas for improvement.
+In our evaluation, the Multinomial Naive Bayes model demonstrated an accuracy of 0.48 in predicting Myers-Briggs personality types based on tweet content. Complementing accuracy, a confusion matrix visually represented the model's performance across various personality types, while the classification report provided detailed insights into precision, recall, and F1-score for each personality type, offering a nuanced understanding of the model's strengths and potential areas for improvement.
 
 \vskip 0.2in
-\bibliography{sample}
 
 \end{document}
