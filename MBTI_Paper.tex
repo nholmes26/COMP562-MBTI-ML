@@ -59,11 +59,7 @@ Our dataset, obtained from Kaggle, consists of a collection of Tweets paired wit
 \section{Evaluating Model Results}
 To assess the performance of our classification models, we employ key metrics including accuracy, precision, recall, and F1-score.
 
-The accuracy of a model is determined by the ratio of correctly predicted instances to the total number of instances:
-
-\[
-\text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}}
-\]
+The accuracy of a model is determined by the ratio of correctly predicted instances to the total number of instances.
 
 Precision represents the proportion of true positive predictions among all instances predicted as positive:
 
@@ -87,7 +83,7 @@ Support represents the number of actual occurrences of each class in the specifi
 
 Additionally, we generate confusion matrices, visual representations of a model's performance, to provide insights into the number of true positive, true negative, false positive, and false negative predictions for each class. This allows us to see which MBTI types we are identifying correctly, and which ones we are confusing.
 
-\subsection{Multinomial Naive Bayes}
+\section{Multinomial Naive Bayes}
 The Multinomial Naive Bayes (MNB) model, well-suited for text classification tasks, emerged as a fitting choice for our Twitter dataset. Rooted in Bayes' theorem, this model calculates the probability of a document given a class by considering the product of individual term probabilities. The probability estimation equation for MNB forms the core of our implementation:
 
 \[ P(\textbf{x}|y, \boldsymbol{\theta}) = \prod_{i=1}^{n} \frac{N_{yi} + \alpha}{N_{y} + \alpha \cdot N_{\text{total}}} \]
