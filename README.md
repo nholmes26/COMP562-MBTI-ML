@@ -28,3 +28,8 @@ Keywords: MBTI Personality, Social Media, Machine Learning
 ### [Random Forest Classifier](Random_Forest.ipynb)
 
 ### [Logistic Regression Model ](Logistic_Regression.ipynb) 
+
+## Figures Referenced in Text
+
+### [LR Confusion Matrix](confusion_matrix.png)
+### [LR Feature Importance Graph](feature_importances.png)
