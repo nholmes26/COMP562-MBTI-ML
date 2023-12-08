@@ -31,5 +31,5 @@ Keywords: MBTI Personality, Social Media, Machine Learning
 
 ## Figures Referenced in Text
 
-### [LR Confusion Matrix](confusion_matrix.png)
-### [LR Feature Importance Graph](feature_importances.png)
+### [LR Confusion Matrix](figures/confusion_matrix.png)
+### [LR Feature Importance Graph](figures/feature_importances.png)
