@@ -167,9 +167,9 @@ To convert the text data into meaningful features, we employed the TF-IDF vector
 This higher accuracy in comparison to our other models showcases the efficacy of the LR model in predicting Myers-Briggs personality types based on tweet content. Furthermore, the confusion matrix-provided insights into the model's performance across various personality types revealed that this model also exhibited a balanced prediction profile, with the 55.6\% of misclassifications wrong by only a single MBTI trait. This emphasizes the model's capability to capture subtle distinctions within the diverse range of personality types.
 
 \section{Results}
-While our Logistic Regression model came out on top, all models were able to generate accuracies greater than 45\%, a noteworthy accomplishment given the complexity of the classification task. We also consistently saw through confusion matrices that mistakes made by models were, more often than not, confusing two MBTI personality types that only differed by a single trait. This pattern underscores the nuanced nature of personality type classification and suggests a high degree of similarity among certain MBTI types, as reflected in their linguistic expression on social media. The confusion matrix for our LR model can be seen in Figure 1, while a table providing further insights into the distribution of incorrectly predicted MBTI types across the number of traits it differs from the correct type by is provided in Table 1.
+While our Logistic Regression model came out on top, all models were able to generate accuracies greater than 45\% and, more often than not, limit mistakes to confusing personality types only differing by a single trait. Given the complexity of the classification task, this is a noteworthy accomplishment. However, as the Logistic Regression model proved superior, we found sufficient evidence to suggest that the logistic function used in LR allows it to model non-linear relationships and capture subtle distinctions within our dataset in a way that better equipped it to discern nuanced patterns in how social media language use relates to personality. 
 
-Taking the findings of the LR model a step further, we generated a feature importance analysis to reveal that certain keywords and phrases were either more or less predictive of specific MBTI types than others, which is presented in Figure 2. These findings open up new avenues for exploring the interplay between language use and personality traits, offering valuable contributions to fields like psycholinguistics and social media analytics.
+The confusion matrix for our LR model can be seen in Figure 1, while a table providing further insights into the distribution of incorrectly predicted MBTI types across the number of traits it differs from the correct type by is provided in Table 1. Taking the findings of the LR model a step further, we generated a feature importance analysis to reveal that certain keywords and phrases were either more or less predictive of specific MBTI types than others, which is presented in Figure 2. These findings open up new avenues for exploring the interplay between language use and personality traits, offering valuable contributions to fields like psycholinguistics and social media analytics.
 
 \section{Tables and Figures}
 \begin{table}[hbtp]
@@ -179,7 +179,7 @@ Taking the findings of the LR model a step further, we generated a feature impor
   \toprule
   \bfseries Letters Off & \bfseries Incorrect \% & \bfseries Total \%\\
   \midrule
-  1 Letter Off & 55.63\% & 19.08\%\\                        
+  1 Letter Off & 55.63\% & 19.08\%\\                    
   2 Letters Off & 30.76\% & 10.55\%\\
   3 Letters Off & 12.61\% & 4.32\%\\
   4 Letters Off & 1.01\% & 0.35\%\\
@@ -204,7 +204,7 @@ Taking the findings of the LR model a step further, we generated a feature impor
   {fig:two}
   {\caption{Feature importance analysis for LR model}}
   {\includegraphics[width=0.8\linewidth]{images/features.png}}
-\end{figure}.
+\end{figure}
 
 \newpage
 \section{References}
