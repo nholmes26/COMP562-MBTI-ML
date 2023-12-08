@@ -3,10 +3,10 @@
 `COMP 562 Fall 2023 Final Project`
 
 For our COMP562 final project, we are comparing the accuracy of four models at predicting Myers-Briggs personality types based on the tweets a person has made. The models we implemented were: <br /> 
-- K-Nearest Neighbors (KNN) <br />
-- Logistic Regression <br />
 - Multinomial Naive Bayes <br />
+- K-Nearest Neighbors (KNN) <br />
 - Random Forests <br />
+- Logistic Regression <br />
 
 Authors: Nathan Holmes, Namita Krishna, Andrew Mu, Nabeel Rahman
 
@@ -31,5 +31,5 @@ Keywords: MBTI Personality, Social Media, Machine Learning
 
 ## Figures Referenced in Text
 
-### [LR Confusion Matrix](confusion_matrix.png)
-### [LR Feature Importance Graph](feature_importances.png)
+### [LR Confusion Matrix](figures/confusion_matrix.png)
+### [LR Feature Importance Graph](figures/feature_importances.png)
