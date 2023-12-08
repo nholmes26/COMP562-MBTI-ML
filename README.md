@@ -19,20 +19,12 @@ Keywords: MBTI Personality, Social Media, Machine Learning
 
 <b><a href="MBTI_Paper.pdf">View Full Report</a></b>
 
-## Contents
+## Models
 
-### [Multinomial Naive Bayes](Naive_Bayes.ipynb)
-
-Multinomial Naive Bayes Model
+### [Multinomial Naive Bayes Model](Naive_Bayes.ipynb)
 
 ### [KNN Classifier](KNN.ipynb)
 
-KNN Model
-
 ### [Random Forest Classifier](Random_Forest.ipynb)
 
-Random Forest Model
-
-### [Logistic Regression](Logistic_Regression.ipynb)
-
-Logistic Regression Model
+### [Logistic Regression Model ](Logistic_Regression.ipynb) 
