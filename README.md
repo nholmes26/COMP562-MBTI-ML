@@ -1,35 +1,37 @@
+# COMP562-MBTI-ML
+
 # Predicting Personality Type Using Multiple Classifier Models
 `COMP 562 Fall 2023 Final Project`
 
 For our COMP562 final project, we are comparing the accuracy of four models at predicting Myers-Briggs personality types based on the tweets a person has made. The models we implemented were: <br /> 
-- K-Nearest Neighbors (KNN) <br />
-- Logistic Regression <br />
+
 - Multinomial Naive Bayes <br />
+- K-Nearest Neighbors (KNN) <br />
 - Random Forests <br />
+- Logistic Regression <br />
 
 Authors: Nathan Holmes, Namita Krishna, Andrew Mu, Nabeel Rahman
 
 ## Abstract
 
-Classification stands as a pioneering domain in the realm of machine learning research, permeating our daily lives through sophisticated data processing models. From discerning spam emails to categorizing patient diagnoses, we are constantly immersed in the practical applications of these advanced technologies. This project delves into the realm of social media, leveraging a diverse dataset of Tweets that encapsulate both qualitative and quantitative dimensions. Within this paper, we undertake the construction and evaluation of accuracy in identifying Myers-Briggs personality types based on users' tweet content. Our approach involves employing a K-Next Neighbor classifier model, a Logistic Regression model, a Multinomial Naive Bayes model, and a Random Forest classifier model to discern nuanced patterns and trends.
+This study explores machine learning's application to analyze social media, specifically Tweets, for precise Myers-Briggs Type Indicator (MBTI) personality identification. Using four diverse machine learning models, we evaluate and compare their efficacy in understanding the nuanced relationship between social media language use and personality traits, offering practical implications for both machine learning and social sciences.
 
-<b><a href="Final_WriteUp.pdf">View Full Report</a></b>
+Keywords: MBTI Personality, Social Media, Machine Learning
 
-## Contents
 
-### [Data Exploration, Cleaning, and Pre-Processing](Data_Exploration_Preparation.ipynb)
+<b><a href="MBTI_Paper.pdf">View Full Report</a></b>
 
-Logistic Regression Model
+## Models
 
-### [Logistic Regression](Logistic_Regression_Classifier.ipynb)
+### [Multinomial Naive Bayes Model](Naive_Bayes.ipynb)
 
-Logistic Regression Model
+### [KNN Classifier](KNN.ipynb)
 
-### [Random Forest Classifier](Random_Forest_Classifier.ipynb)
+### [Random Forest Classifier](Random_Forest.ipynb)
 
-Random Forest Model
+### [Logistic Regression Model ](Logistic_Regression.ipynb) 
 
-### [KNN Classifier](KNN_Classifier.ipynb)
+## Figures Referenced in Text
 
-KNN Model
-
+### [LR Confusion Matrix](figures/confusion_matrix.png)
+### [LR Feature Importance Graph](figures/feature_importances.png)
